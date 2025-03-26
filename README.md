@@ -58,4 +58,4 @@ Displays the predicted label along with a relevant image (if provided).
 python app.py
 ```
 
-Please email to request these assets or additional datasets.
+Please email to yunheumlee@kaist.ac.kr request these assets or additional datasets.
