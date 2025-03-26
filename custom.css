@@ -1,0 +1,98 @@
+:root {
+--glass-bg: rgba(255, 255, 255, 0.1);
+--glass-border: rgba(255, 255, 255, 0.2);
+--glass-shadow: rgba(0, 0, 0, 0.4);
+--text-color: #e0e0e0;
+--background-color: #121212;
+--highlight-color: #bb86fc;
+--active-border-color: #ff69b4;  /* Pink border color */
+
+}
+
+body {
+background-color: var(--background-color);
+color: var(--text-color);
+font-family: Arial, sans-serif;
+}
+
+.gradio-container {
+backdrop-filter: blur(10px);
+background: var(--glass-bg);
+border: 1px solid var(--glass-border);
+border-radius: 15px;
+box-shadow: 0 4px 30px var(--glass-shadow);
+padding: 20px;
+margin: 20px;
+color: var(--text-color);
+}
+
+.gradio-container .title {
+font-size: 1.5em;
+margin-bottom: 10px;
+text-align: center;
+color: var(--text-color);
+}
+
+.gradio-container .row, .gradio-container .column {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.gradio-container .row {
+flex-direction: row;
+justify-content: space-around;
+}
+
+.gradio-container .textbox, .gradio-container .button, .gradio-container .plot, .gradio-container .image {
+backdrop-filter: blur(10px);
+background: var(--glass-bg);
+border: 1px solid var(--glass-border);
+border-radius: 15px;
+box-shadow: 0 4px 30px var(--glass-shadow);
+color: var(--text-color);
+/* margin: 10px; */
+/* padding: 10px; */
+}
+
+.gradio-container .textbox input, .gradio-container .textbox textarea {
+background: transparent;
+border: none;
+color: var(--text-color);
+width: 100%;
+}
+
+.gradio-container .button {
+cursor: pointer;
+text-align: center;
+transition: background 0.3s, color 0.3s;
+background-color: var(--highlight-color);
+border: none;
+}
+
+.gradio-container .button:hover {
+background: var(--glass-border);
+}
+
+.gradio-container .plot, .gradio-container .image {
+padding: 0;
+overflow: hidden;
+}
+
+.gradio-container .plot canvas, .gradio-container .image img {
+border-radius: 15px;
+}
+
+.gradio-container .image img {
+width: 100%;
+height: auto;
+}
+
+.gradio-container .title, .gradio-container .label {
+color: var(--text-color);
+}
+
+.gradio-container .label {
+font-size: 1em;
+margin-bottom: 5px;
+}
