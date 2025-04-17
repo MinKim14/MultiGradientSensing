@@ -205,18 +205,10 @@ def transfer_train():
 
     # Placeholders for your local dataset & model checkpoint
     file_names = [
-        f"{DATASET_DIR}sensor_data_a to z 10회.csv",
-        f"{DATASET_DIR}sensor_data_bmil 10회.csv",
-        f"{DATASET_DIR}sensor_data_iloveyou 10회.csv",
-        f"{DATASET_DIR}sensor_data_kaist 10회.csv",
-        f"{DATASET_DIR}sensor_data_lifeisagift 10회.csv",
+        f"{DATASET_DIR}sensor_data_a_to_z.csv",
     ]
     model_names = [
         f"{MODEL_CHECKPOINT_DIR}lstm_full_a2z_all_nLayer-5/train_best.pth",
-        f"{MODEL_CHECKPOINT_DIR}lstm_full_bmil_all_nLayer-5/train_best.pth",
-        f"{MODEL_CHECKPOINT_DIR}lstm_full_iloveyou_all_nLayer-5/val_best.pth",
-        f"{MODEL_CHECKPOINT_DIR}lstm_full_kaist_all_nLayer-5/val_best.pth",
-        f"{MODEL_CHECKPOINT_DIR}lstm_full_lifeisagift_all_nLayer-5/val_best.pth",
     ]
 
     # Example: picking the first dataset & model
@@ -255,8 +247,8 @@ def transfer_train():
     model.load_state_dict(torch.load(model_checkpoint))
     model.train()
 
-    optimizer = torch.optim.AdamW(model.parameters(), lr=6e-4)
-    for i in range(50):
+    optimizer = torch.optim.AdamW(model.parameters(), lr=2e-4)
+    for i in range(20):
         model = train(i, model, train_dataloader, optimizer)
 
     model.eval()
